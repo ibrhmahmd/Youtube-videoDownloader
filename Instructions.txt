@@ -1,0 +1,47 @@
+# YouTube Video Downloader Setup
+
+## Quick Start
+1. Create and activate virtual environment:
+   ```
+   python -m venv venv
+   venv\Scripts\activate  # Windows
+   source venv/bin/activate  # Mac/Linux
+   ```
+
+2. Install requirements:
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. Run the application:
+   ```
+   streamlit run app.py
+   ```
+
+## Project Structure
+```
+your_project/
+├── src/
+│   ├── core/           # Core functionality
+│   │   ├── downloader.py  # Video download logic
+│   │   └── ffmpeg.py      # ffmpeg handling
+│   └── utils/          # Utility functions
+│       └── file_handler.py # File operations
+├── static/            # Temporary files
+├── downloads/         # Downloaded videos
+├── app.py            # Main application
+└── requirements.txt  # Dependencies
+```
+
+## Troubleshooting
+- If ffmpeg installation fails:
+  * The app will attempt to install ffmpeg automatically
+  * If it fails, you can install it manually:
+    - Windows: Download from https://github.com/BtbN/FFmpeg-Builds/releases
+    - Mac: brew install ffmpeg
+    - Linux: sudo apt-get install ffmpeg
+
+- If you get package installation errors:
+  * Make sure you're in the virtual environment (you should see (venv) in your prompt)
+  * Try: pip install --upgrade pip setuptools wheel
+  * Then: pip install -r requirements.txt

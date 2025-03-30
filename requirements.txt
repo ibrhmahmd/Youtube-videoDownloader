@@ -1,0 +1,17 @@
+# Core video processing
+yt-dlp==2024.3.10
+ffmpeg-python==0.2.0
+pytube==15.0.0
+
+# Web interface
+streamlit==1.32.0
+numpy==1.24.3
+
+# Utilities
+python-magic==0.4.27
+requests==2.31.0
+watchdog==3.0.0
+python-dotenv==1.0.0
+
+# FFmpeg binary will be downloaded and installed in venv/bin or venv/Scripts
+# No need to install system-wide ffmpeg
