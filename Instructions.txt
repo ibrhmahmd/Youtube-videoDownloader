@@ -1,47 +1,55 @@
-# YouTube Video Downloader Setup
+# YouTube Video Downloader - Quick Start Guide
 
-## Quick Start
-1. Create and activate virtual environment:
+## Setup
+1. Create a virtual environment:
    ```
    python -m venv venv
-   venv\Scripts\activate  # Windows
-   source venv/bin/activate  # Mac/Linux
    ```
 
-2. Install requirements:
+2. Activate the virtual environment:
+   - Windows: `venv\Scripts\activate`
+   - Linux/Mac: `source venv/bin/activate`
+
+3. Install dependencies:
    ```
    pip install -r requirements.txt
    ```
 
-3. Run the application:
+4. Run the application:
    ```
    streamlit run app.py
    ```
 
+## Features
+- Download YouTube videos in MP4 format
+- Select video quality (720p or 480p)
+- Simple and intuitive interface
+- No external dependencies required
+
 ## Project Structure
 ```
-your_project/
+streamlitVideoDownloder/
+├── app.py                 # Main Streamlit application
+├── requirements.txt       # Python dependencies
 ├── src/
-│   ├── core/           # Core functionality
-│   │   ├── downloader.py  # Video download logic
-│   │   └── ffmpeg.py      # ffmpeg handling
-│   └── utils/          # Utility functions
-│       └── file_handler.py # File operations
-├── static/            # Temporary files
-├── downloads/         # Downloaded videos
-├── app.py            # Main application
-└── requirements.txt  # Dependencies
+│   ├── core/            # Core functionality
+│   │   └── downloader.py # Video downloading logic
+│   └── utils/           # Utility functions
+│       └── file_handler.py # File management
+└── temp/                # Temporary download directory
 ```
 
 ## Troubleshooting
-- If ffmpeg installation fails:
-  * The app will attempt to install ffmpeg automatically
-  * If it fails, you can install it manually:
-    - Windows: Download from https://github.com/BtbN/FFmpeg-Builds/releases
-    - Mac: brew install ffmpeg
-    - Linux: sudo apt-get install ffmpeg
+1. If you encounter any errors:
+   - Check your internet connection
+   - Verify the YouTube URL is valid
+   - Try a different video quality
+   - Restart the application
 
-- If you get package installation errors:
-  * Make sure you're in the virtual environment (you should see (venv) in your prompt)
-  * Try: pip install --upgrade pip setuptools wheel
-  * Then: pip install -r requirements.txt
+2. For download issues:
+   - Ensure you have sufficient disk space
+   - Check if the video is available in your region
+   - Try a different video URL
+
+## Note
+This application is designed for educational purposes and web development projects. Please respect YouTube's terms of service and copyright laws.

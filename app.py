@@ -1,5 +1,4 @@
 import streamlit as st
-from src.core.ffmpeg import setup_ffmpeg
 from src.core.downloader import download_video
 from src.utils.file_handler import create_directories, get_temp_file_path, cleanup_old_files, remove_file
 
@@ -12,11 +11,6 @@ st.set_page_config(
 
 # Create necessary directories
 create_directories()
-
-# Setup ffmpeg
-if not setup_ffmpeg():
-    st.error("Failed to setup ffmpeg. Please install it manually.")
-    st.stop()
 
 # Custom CSS for better styling
 st.markdown("""
@@ -73,24 +67,25 @@ if st.button("Download Video"):
                 # Download video
                 video_info = download_video(url, quality, temp_path)
                 
-                # Show video information
-                st.info(f"Video Title: {video_info['title']}")
-                st.info(f"Duration: {video_info['duration']} seconds")
-                
-                # Create download link
-                with open(video_info['path'], 'rb') as f:
-                    st.download_button(
-                        label="Click to Download Video",
-                        data=f,
-                        file_name=f"{video_info['title']}.mp4",
-                        mime="video/mp4"
-                    )
-                
-                # Clean up temporary file
-                remove_file(video_info['path'])
-                
-                # Success message
-                st.success(f"Video processed successfully!")
+                if video_info:
+                    # Show video information
+                    st.info(f"Video Title: {video_info['title']}")
+                    st.info(f"Duration: {video_info['duration']} seconds")
+                    
+                    # Create download link
+                    with open(video_info['path'], 'rb') as f:
+                        st.download_button(
+                            label="Click to Download Video",
+                            data=f,
+                            file_name=f"{video_info['title']}.mp4",
+                            mime="video/mp4"
+                        )
+                    
+                    # Clean up temporary file
+                    remove_file(video_info['path'])
+                    
+                    # Success message
+                    st.success(f"Video processed successfully!")
                 
         except Exception as e:
             st.error(f"Error downloading video: {str(e)}")
