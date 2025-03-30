@@ -1,5 +1,3 @@
-# YouTube Video Downloader - Quick Start Guide
-
 ## Setup
 1. Create a virtual environment:
    ```
@@ -19,37 +17,3 @@
    ```
    streamlit run app.py
    ```
-
-## Features
-- Download YouTube videos in MP4 format
-- Select video quality (720p or 480p)
-- Simple and intuitive interface
-- No external dependencies required
-
-## Project Structure
-```
-streamlitVideoDownloder/
-├── app.py                 # Main Streamlit application
-├── requirements.txt       # Python dependencies
-├── src/
-│   ├── core/            # Core functionality
-│   │   └── downloader.py # Video downloading logic
-│   └── utils/           # Utility functions
-│       └── file_handler.py # File management
-└── temp/                # Temporary download directory
-```
-
-## Troubleshooting
-1. If you encounter any errors:
-   - Check your internet connection
-   - Verify the YouTube URL is valid
-   - Try a different video quality
-   - Restart the application
-
-2. For download issues:
-   - Ensure you have sufficient disk space
-   - Check if the video is available in your region
-   - Try a different video URL
-
-## Note
-This application is designed for educational purposes and web development projects. Please respect YouTube's terms of service and copyright laws.
