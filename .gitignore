@@ -32,6 +32,7 @@ build/
 
 # FFmpeg binaries
 ffmpeg_bin/
+streamlitVideoDownloder/ffmpeg_bin/
 
 # Local development settings
 .env
