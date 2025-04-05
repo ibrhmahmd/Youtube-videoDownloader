@@ -1,0 +1,49 @@
+# Python virtual environments
+venv/
+venv_new/
+env/
+.env
+.venv
+ENV/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Downloaded videos and temporary files
+*.mp4
+*.webm
+*.part
+
+# FFmpeg binaries
+ffmpeg_bin/
+
+# Local development settings
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
